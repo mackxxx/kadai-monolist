@@ -20,10 +20,9 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
-    @items = @user.items.uniq
-    @count_want = @user.want_items.count
-    @have_users = @item.have_users　
+    @item = Item.find(params[:id])
+    @want_users = @item.want_users
+    @have_users = @item.have_users
   end
 
 
